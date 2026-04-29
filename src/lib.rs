@@ -1,4 +1,4 @@
-//! Domain model for the Loom graph layer.
+//! Domain model for the frp graph layer.
 //!
 //! Defines the core domain types: [`Atom`], [`Block`], [`Port`], [`HyperEdge`],
 //! and shared [`Meta`] — plus the [`DomainError`] type for validation failures.

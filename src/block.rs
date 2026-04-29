@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-use plexus_base::{AtomId, BlockId};
+use frp_plexus::{AtomId, BlockId};
 use serde::{Deserialize, Serialize};
 
 use crate::error::DomainError;
@@ -80,7 +80,7 @@ impl BlockSchema {
 // Block
 // ---------------------------------------------------------------------------
 
-/// A composable unit in a Plexus graph: a group of [`Atom`](crate::atom::Atom)s
+/// A composable unit in an frp graph: a group of [`Atom`](crate::atom::Atom)s
 /// with a shared typed port interface ([`BlockSchema`]) and metadata.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Block {
@@ -99,10 +99,10 @@ impl Block {
 }
 
 // ---------------------------------------------------------------------------
-// loom-base integration: HasBlockId
+// frp-loom integration: HasBlockId
 // ---------------------------------------------------------------------------
 
-impl loom_base::memory::HasBlockId for Block {
+impl frp_loom::memory::HasBlockId for Block {
     fn block_id(&self) -> BlockId {
         self.id
     }
@@ -161,7 +161,7 @@ impl BlockBuilder {
 
 #[cfg(test)]
 mod tests {
-    use plexus_base::{IdGen, TypeSig};
+    use frp_plexus::{IdGen, TypeSig};
 
     use super::*;
     use crate::port::Port;

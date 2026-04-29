@@ -1,7 +1,7 @@
 use std::sync::Arc;
 use std::time::Duration;
 
-use plexus_base::{EdgeId, PortId, Value};
+use frp_plexus::{EdgeId, PortId, Value};
 use serde::{Deserialize, Serialize};
 
 // ---------------------------------------------------------------------------
@@ -101,7 +101,7 @@ pub enum EdgeSchedule {
 // HyperEdge
 // ---------------------------------------------------------------------------
 
-/// A directed, multi-input/multi-output data-flow edge in a Plexus graph.
+/// A directed, multi-input/multi-output data-flow edge in an frp graph.
 ///
 /// A `HyperEdge` reads from one or more source [`Port`](crate::port::Port)s,
 /// applies its [`EdgeTransform`], and writes the result to one or more target
@@ -143,10 +143,10 @@ impl HyperEdge {
 }
 
 // ---------------------------------------------------------------------------
-// loom-base integration: HasEdgeId
+// frp-loom integration: HasEdgeId
 // ---------------------------------------------------------------------------
 
-impl loom_base::memory::HasEdgeId for HyperEdge {
+impl frp_loom::memory::HasEdgeId for HyperEdge {
     fn edge_id(&self) -> EdgeId {
         self.id
     }
@@ -158,7 +158,7 @@ impl loom_base::memory::HasEdgeId for HyperEdge {
 
 #[cfg(test)]
 mod tests {
-    use plexus_base::IdGen;
+    use frp_plexus::IdGen;
 
     use super::*;
 

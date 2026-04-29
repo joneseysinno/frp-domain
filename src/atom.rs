@@ -1,4 +1,4 @@
-use plexus_base::{AtomId, LayerTag, Value};
+use frp_plexus::{AtomId, LayerTag, Value};
 use serde::{Deserialize, Serialize};
 
 use crate::port::Port;
@@ -68,7 +68,7 @@ impl AtomMeta {
 // Atom
 // ---------------------------------------------------------------------------
 
-/// The fundamental computational unit of a Plexus graph.
+/// The fundamental computational unit of an frp graph.
 ///
 /// An `Atom` has a kind (its role), metadata, a current [`Value`], and a set
 /// of typed directional [`Port`]s through which data flows.
@@ -109,10 +109,10 @@ impl Atom {
 }
 
 // ---------------------------------------------------------------------------
-// loom-base integration: HasAtomId
+// frp-loom integration: HasAtomId
 // ---------------------------------------------------------------------------
 
-impl loom_base::memory::HasAtomId for Atom {
+impl frp_loom::memory::HasAtomId for Atom {
     fn atom_id(&self) -> AtomId {
         self.id
     }
@@ -124,7 +124,7 @@ impl loom_base::memory::HasAtomId for Atom {
 
 #[cfg(test)]
 mod tests {
-    use plexus_base::{IdGen, TypeSig};
+    use frp_plexus::{IdGen, TypeSig};
 
     use super::*;
     use crate::port::Port;

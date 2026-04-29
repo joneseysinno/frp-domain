@@ -1,17 +1,17 @@
 [package]
-name = "loom-domain"
+name = "frp-domain"
 version = "0.1.0"
 edition = "2024"
-description = "Domain model for the Loom graph: atoms, blocks, ports, edges, and metadata."
+description = "Domain model for the frp graph: atoms, blocks, ports, edges, and metadata."
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/joneseysinno/loom-domain.git"
-documentation = "https://docs.rs/loom-domain"
-keywords = ["graph", "domain", "model", "loom", "plexus"]
+repository = "https://github.com/joneseysinno/frp-domain.git"
+documentation = "https://docs.rs/frp-domain"
+keywords = ["graph", "domain", "model", "frp", "infinite-db"]
 categories = ["data-structures"]
 
 [dependencies]
-plexus-base = { version = "0.1.0", path = "../plexus-core" }
-loom-base = { version = "0.1.0", path = "../loom-base" }
+frp-plexus = { version = "0.1.0", path = "../frp-plexus" }
+frp-loom = { version = "0.1.0", path = "../frp-loom" }
 thiserror = { workspace = true }
 serde = { workspace = true }
 
