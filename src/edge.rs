@@ -1,7 +1,7 @@
 use std::sync::Arc;
 use std::time::Duration;
 
-use plexus_core::{EdgeId, PortId, Value};
+use plexus_base::{EdgeId, PortId, Value};
 use serde::{Deserialize, Serialize};
 
 // ---------------------------------------------------------------------------
@@ -143,10 +143,10 @@ impl HyperEdge {
 }
 
 // ---------------------------------------------------------------------------
-// loom-core integration: HasEdgeId
+// loom-base integration: HasEdgeId
 // ---------------------------------------------------------------------------
 
-impl loom_core::memory::HasEdgeId for HyperEdge {
+impl loom_base::memory::HasEdgeId for HyperEdge {
     fn edge_id(&self) -> EdgeId {
         self.id
     }
@@ -158,7 +158,7 @@ impl loom_core::memory::HasEdgeId for HyperEdge {
 
 #[cfg(test)]
 mod tests {
-    use plexus_core::IdGen;
+    use plexus_base::IdGen;
 
     use super::*;
 

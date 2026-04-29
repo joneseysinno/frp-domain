@@ -1,4 +1,4 @@
-use plexus_core::{PortId, TypeSig};
+use plexus_base::{PortId, TypeSig};
 use serde::{Deserialize, Serialize};
 
 // ---------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-use plexus_core::{AtomId, BlockId};
+use plexus_base::{AtomId, BlockId};
 use serde::{Deserialize, Serialize};
 
 use crate::error::DomainError;
@@ -99,10 +99,10 @@ impl Block {
 }
 
 // ---------------------------------------------------------------------------
-// loom-core integration: HasBlockId
+// loom-base integration: HasBlockId
 // ---------------------------------------------------------------------------
 
-impl loom_core::memory::HasBlockId for Block {
+impl loom_base::memory::HasBlockId for Block {
     fn block_id(&self) -> BlockId {
         self.id
     }
@@ -161,7 +161,7 @@ impl BlockBuilder {
 
 #[cfg(test)]
 mod tests {
-    use plexus_core::{IdGen, TypeSig};
+    use plexus_base::{IdGen, TypeSig};
 
     use super::*;
     use crate::port::Port;

@@ -1,4 +1,4 @@
-use plexus_core::{AtomId, LayerTag, Value};
+use plexus_base::{AtomId, LayerTag, Value};
 use serde::{Deserialize, Serialize};
 
 use crate::port::Port;
@@ -109,10 +109,10 @@ impl Atom {
 }
 
 // ---------------------------------------------------------------------------
-// loom-core integration: HasAtomId
+// loom-base integration: HasAtomId
 // ---------------------------------------------------------------------------
 
-impl loom_core::memory::HasAtomId for Atom {
+impl loom_base::memory::HasAtomId for Atom {
     fn atom_id(&self) -> AtomId {
         self.id
     }
@@ -124,7 +124,7 @@ impl loom_core::memory::HasAtomId for Atom {
 
 #[cfg(test)]
 mod tests {
-    use plexus_core::{IdGen, TypeSig};
+    use plexus_base::{IdGen, TypeSig};
 
     use super::*;
     use crate::port::Port;
