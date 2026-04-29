@@ -1,0 +1,19 @@
+[package]
+name = "loom-domain"
+version = "0.1.0"
+edition = "2024"
+description = "Domain model for the Loom graph: atoms, blocks, ports, edges, and metadata."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/plexus-loom/plexus-loom"
+documentation = "https://docs.rs/loom-domain"
+keywords = ["graph", "domain", "model", "loom", "plexus"]
+categories = ["data-structures"]
+
+[dependencies]
+plexus-core = { version = "0.1.0", path = "../plexus-core" }
+loom-core = { version = "0.1.0", path = "../loom-core" }
+thiserror = { workspace = true }
+serde = { workspace = true }
+
+[dev-dependencies]
+serde_json = "1"
